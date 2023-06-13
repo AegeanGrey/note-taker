@@ -1,23 +1,28 @@
 const express = require('express');
 const path = require('path');
-const savedNoteData = require('./db/db.json');
+const routes = require('./routes/index.js');
 
 const app = express();
 const PORT = 3001;
 
-// Takes the user to index.html within the public folder by default
+// Utilizes Middleware within routes/index.js
+app.use(routes);
+
+// Middleware that (by default) takes the user to index.html within the public folder
 app.use(express.static('public'));
 
 // When the /notes route is requested within the URL,
-app.get('/notes', (req, res) =>
+app.get('/notes', (req, res) => {
 
   // the webpage will then display notes.html
-  res.sendFile(path.join(__dirname, '/public/notes.html'))
-);
+  res.sendFile(path.join(__dirname, '/public/webpages/notes.html'))
+});
 
-// pulls in save note data from db.json and displays it on /notes
-app.get('/api/notes', (req, res) => res.json(savedNoteData));
+// Redirects user to homepage if they input an invalid url request
+app.get('*', (req, res) => {
+  res.send(`Invalid URL, please return to <a href="http://localhost:${PORT}">homepage</a>`)
+});
 
-app.listen(PORT, () =>
+app.listen(PORT, () => {
   console.log(`Listening at http://localhost:${PORT}`)
-);
+});
