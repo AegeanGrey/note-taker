@@ -5,6 +5,10 @@ const routes = require('./routes/index.js');
 const app = express();
 const PORT = 3001;
 
+// 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 // Utilizes Middleware within routes/index.js
 app.use(routes);
 
