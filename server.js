@@ -5,7 +5,7 @@ const routes = require('./routes/index.js');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// 
+// Middleware that takes in anything JSON related before passing to 'api.js'
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -24,7 +24,7 @@ app.get('/notes', (req, res) => {
 
 // Redirects user to homepage if they input an invalid url request
 app.get('*', (req, res) => {
-  res.send(`Invalid URL, please return to <a href="http://localhost:${PORT}">homepage</a>`)
+  res.send(`Invalid URL, please return to <a href="https://noteynotes-a2993dbf9bbe.herokuapp.com">homepage</a>`)
 });
 
 app.listen(PORT, () => {
