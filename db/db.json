@@ -1,1 +1,7 @@
-[{"title":"Hello","text":"World","id":"c86068b7-f41a-4a40-a341-9ef92c7aec55"},{"title":"Survey Mammals","text":"We must head Northwest upon dawn","id":"355bd1d4-a295-4030-9cda-7b1afc513020"}]
+[
+    {
+        "title":"Hello, click me for help!",
+        "text":"1.) To create a note, click the plus icon in the top right of the page\n2.) Input a small title and description within the field below\n3.) Click the save icon in the top right to save your note\n4.) To delete a specific note, click on the red trash bin icon you don't need it anymore",
+        "id":"c86068b7-f41a-4a40-a341-9ef92c7aec55"
+    }
+]
